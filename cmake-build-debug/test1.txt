@@ -1,0 +1,57 @@
+     fclose(file);  
+
+       }  
+
+// C++获取文件大小方法三  
+
+        CFile cfile;  
+
+       if (cfile.Open(filepath, CFile::modeRead))  
+
+       {  
+
+          int size = cfile.GetLength();  
+
+           cout< < size< < endl;  
+
+       }  
+
+
+// C++获取文件大小方法四  
+
+      HANDLE handle = CreateFile(filepath, FILE_READ_EA, 
+                                                      FILE_SHARE_READ, 0, OPEN_EXISTING, 0, 0);  
+
+      if (handle != INVALID_HANDLE_VALUE)  
+
+        {  
+
+              int size = GetFileSize(handle, NULL);  
+
+                cout< < size< < endl;  
+
+               CloseHandle(handle);  
+
+          }  
+
+
+//C++获取文件大小方法五,这种方法不需要打开文件就能直接获取到文件大小
+
+        CFile cfile; 
+       CFileStatus rStatus;
+       CFile::GetStatus(_T("D:\\Program Files\\360\\360SD\\360hips.exe"),rStatus);
+       ULONGLONG ulong = rStatus.m_size;
+
+//C++ 获取文件大小方法六
+
+  string sFileName="c:/aa.txt";  
+  ifstream in(sFileName.c_str());  
+  in.seekg(0,ios::end);   
+  streampos size = in.tellg();  
+  in.close();  
+  cout<< "文件大小为："<<size<<" 字节"<<endl;  
+
+//C++ 获取文件方法七 使用Windows API
+
+ //用API函数CreateFile()创建文件句柄
+  HANDLE fhadle = CreateFile("file.txt",           //文件名或路径

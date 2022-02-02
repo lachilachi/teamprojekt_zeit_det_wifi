@@ -1,0 +1,20 @@
+a small 255byte(1 word in 64 bit device) example
+
+helloworld
+helloworld
+helloworld
+helloworld
+helloworld
+helloworld
+helloworld
+helloworld
+helloworld
+helloworld
+helloworld
+helloworld
+helloworld
+helloworld
+helloworld
+helloworld
+12345678
+
